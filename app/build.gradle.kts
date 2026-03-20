@@ -67,4 +67,5 @@ dependencies {
 
 // 4. Corrutinas (Procesos en segundo plano)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+    implementation("com.google.firebase:firebase-crashlytics:20.0.4")
 }
