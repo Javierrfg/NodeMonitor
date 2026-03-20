@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Servidor"
+            android:textColor="@color/text_white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDetailStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Estado: Online"
+            android:textColor="@color/accent_green"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailName" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMetrics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:cardBackgroundColor="@color/primary_light"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/card_stroke"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailStatus">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Métricas en Tiempo Real"
+                    android:textColor="@color/text_white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvDetailCpu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Uso de CPU: 45%"
+                    android:textColor="@color/text_gray"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvDetailConnections"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conexiones Activas: 120"
+                    android:textColor="@color/text_gray"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvDetailType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Motor: PostgreSQL"
+                    android:textColor="@color/text_gray"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvSystemLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Registro del Sistema (Logs):\n\n[10:00:01] Sistema iniciado correctamente.\n[10:05:22] Conexión entrante desde 192.168.1.50.\n[10:15:00] Backup programado completado con éxito. Tamaño: 45GB.\n[10:30:12] Sincronización de nodos finalizada.\n[11:00:00] Revisión de integridad de base de datos OK.\n[11:15:45] Optimización de consultas en segundo plano ejecutándose..."
+            android:textColor="@color/text_gray"
+            android:textSize="16sp"
+            android:lineSpacingExtra="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardMetrics" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReportIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="40dp"
+            android:text="Reportar Falla"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingVertical="14dp"
+            app:backgroundTint="#D32F2F"
+            app:cornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvSystemLogs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/ic_alert"
+            app:iconGravity="textStart"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
